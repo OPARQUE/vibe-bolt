@@ -1,0 +1,59 @@
+{% include 'partials/_header.twig' %}
+{% setcontent secao = 'secoes' where { id: record.relation.secoes.0 } limit 1 %}
+<div class="conteudo-central">
+    <div class="container">
+        <div class="row">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+            <div class="col-md-7 col-sm-8 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 capa-pagina" style="background-image: url({{secao.capa|image()}});">
+                        <h2 class="text-bg">
+                            <span>{{secao.titulo}}</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row pagina">
+                    <div class="col-md-12">
+                        {% set menusecao = '' ~ secao.menu %} 
+                        {{ menu(menusecao, 'partials/_category_menu.twig') }}
+                        <div class="row">
+                            <!-- Start record -->
+                            <div class="col-xs-12 item-list-page">
+                                <h2>{{record.titulo}}</h2>
+                                <h4>{{record.resumo}}</h4>
+                                <div class="meta-post">
+                                    {{record.datepublish|localdate()}} - postado por <strong>{{record.user.displayname}}</strong><br>
+                                    {% if record.taxonomy.tags is defined %}
+                                        {% for taglink, tag in record.taxonomy.tags %}
+                                            <a href="{{taglink}}">
+                                                <span class="label label-success comb3">{{tag}}</span>
+                                            </a>
+                                        {% endfor %}
+                                    {% endif %}
+                                </div>
+                                {% if record.image is defined %}
+                                    <p>
+                                        {{ record.image|popup(640, 300) }}
+                                    </p>
+                                {% endif %}
+                                <p>
+                                    {{record.body}}
+                                </p>
+                            </div>
+                            <div class="col-xs-12">
+                                {% include 'partials/_disqus.twig' %}
+                            </div>
+                        </div>
+
+                        {% include 'partials/_relacionadas.twig' %}
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-xs hidden-sm">
+                {% include 'partials/_sidebar_right.twig' %}
+            </div>
+        </div>
+    </div>
+</div><!--/.conteudo-central -->
+{% include 'partials/_footer.twig' %}

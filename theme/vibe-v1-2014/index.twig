@@ -1,0 +1,116 @@
+{% include 'partials/_header.twig' %}
+
+<div class="conteudo-central">
+    <div class="container">
+        <div class="row">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+            {% setcontent slides = 'slides/latest/6' %}
+            <div class="col-md-10 col-sm-8 col-xs-12 slides-principal"">
+                <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                        {% for item in slides %}
+                            <li data-target="#carousel-example-generic" data-slide-to="{{ loop.index }}" class="{% if loop.first %}active{% endif %}">
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner" role="listbox">
+                        {% for item in slides %}
+                            <a href="{{ item.url }}" target="{{ item.destino }}" class="item {% if loop.first %}active{% endif %}">
+                                <img src="{{ thumbnail(item.image, 945,340) }}" alt="{{ item.titulo }}">
+                                <div class="carousel-caption">
+                                    <h3><span class="text-uppercase">{{ item.titulo }}</span></h3>
+                                    <p><span>{{ item.descricao }}</span></p>
+                                </div>
+                            </a>
+                        {% endfor %}
+                    </div>
+
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Anterior</span>
+                    </a>
+                    <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Próximo</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {{ menu('categorias', 'partials/_category_menu.twig') }}
+        <div class="row">
+            <div class="col-xs-6">
+                <div class="row">
+                    {% setcontent artigos = 'artigos/latest/4' %}
+                    {% for item in artigos %}
+                        <div class="col-md-6 col-xs-12 item-home">
+                            <a href="{{item.link}}" class="tile-item" style="background-image: url({{ thumbnail(item.image, 280,300) }});">
+                                <div class="corpo-item">
+                                    <h3 class="text-bg">
+                                        <span>{{item.titulo_destaque}}</span>
+                                    </h3>
+                                    <div class="meta">
+                                        {% if item.taxonomy.categorias is defined %}
+                                            {% for link,valor in item.taxonomy.categorias %}
+                                                {{ valor }} | 
+                                            {% endfor %}
+                                        {% endif %}
+                                        <span class="glyphicon glyphicon-tags" style="font-size: 10px;"></span>&nbsp;&nbsp;
+                                        {% for taglink, tag in item.taxonomy.tags %}
+                                            {{tag}} 
+                                        {% endfor %}
+                                    </div>
+                                    <div class="descricao" style="display: none;">
+                                        {{item.resumo|excerpt(80)}}
+                                        <i class="fa fa-plus-square"></i>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="col-xs-6">
+                <div class="row">
+                    <div class="col-xs-12 item-home">
+                        <iframe src="//player.vimeo.com/video/74495680?title=0&amp;byline=0&amp;portrait=0" width="100%" height="300" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                    </div>
+                    {% setcontent ultimapromocao = 'artigos-radio' where { 'categorias-radio': 'promocoes' } returnsingle %}
+                    <div class="col-md-6 col-xs-12 item-home">
+                        <a href="{{ ultimapromocao.link }}" class="tile-item" style="background-image: url({{ thumbnail(ultimapromocao.image, 280,300) }});">
+                            <div class="corpo-item">
+                                <h3 class="text-bg">
+                                    <span>{{ ultimapromocao.titulo }}</span>
+                                </h3>
+                                <div class="descricao" style="display: none;">
+                                    {{ ultimapromocao.resumo|excerpt(80) }}
+                                    <i class="fa fa-plus-square"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% setcontent ultimopodcast = 'artigos-radio' where { 'categorias-radio': 'podcasts' } returnsingle %}
+                    <div class="col-md-6 col-xs-12 item-home">
+                        <a href="{{ ultimopodcast.link }}" class="tile-item">
+                            <div class="corpo-item">
+                                <h3 class="text-bg">
+                                    <span>Podcast</span>
+                                </h3>
+                                <p>
+                                    <img src="{{ thumbnail(ultimopodcast.image, 276, 110) }}" class="img-responsive" style="padding:10px 10px;"/>
+                                </p>
+                                <div class="descricao" style="display: none;">
+                                    {{ ultimopodcast.resumo|excerpt(80) }}
+                                    <i class="fa fa-plus-square"></i>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!--/.conteudo-central -->
+{% include 'partials/_footer.twig' %}

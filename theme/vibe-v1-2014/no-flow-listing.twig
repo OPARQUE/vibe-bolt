@@ -1,0 +1,86 @@
+{% include 'partials/_header.twig' %}
+{% setcontent noflow = 'secao/no-flow' %}
+<div class="conteudo-central">
+    <div class="container">
+        <div class="row">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+            <div class="col-md-7 col-sm-8 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 capa-pagina" style="background-image: url({{noflow.capa|image()}});">
+                        <h2 class="text-bg">
+                            <span>{{noflow.titulo}}</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row pagina">
+                    <div class="col-md-12">
+                        {{ menu('categorias', 'partials/_category_menu.twig') }}
+                        <div class="row">
+                            {% if taxonomytype is defined %}
+                                {% if taxonomytype=='categorias' %}
+                                    {% setcontent artigo = 'artigos/latest/6' where { 'categorias': slug } allowpaging %}
+                                {% elseif taxonomytype=='tags' %}
+                                    {% setcontent artigo = 'artigos/latest/6' where { 'tags': slug } allowpaging %}
+                                {% endif %}
+                            {% else %}
+                                {% setcontent artigo = 'artigos/latest/6' allowpaging %}
+                            {% endif %}
+
+                            <!-- Start listing -->
+                            {% if taxonomytype=='tags' %}
+                                <div class="col-xs-12">
+                                    <h2>
+                                        <hr>
+                                        Artigos com a tag 
+                                        <span class="label label-success comb3">{{slug}}</span>
+                                        <hr>
+                                    </h2>
+                                </div>
+                            {% endif %}
+
+                            {% if artigo is not empty %}
+                                {% for item in artigo %}
+                                    <div class="col-xs-12 item-list-page">
+                                        <h2><a href="{{item.link}}">{{item.titulo}}</a></h2>
+                                        <h4>{{item.resumo}}</h4>
+                                        <div class="meta-post">
+                                            {{item.datepublish|localdate()}} - postado por <strong>{{item.user.displayname}}</strong><br>
+                                            {% if item.taxonomy.tags is defined %}
+                                                {% for taglink, tag in item.taxonomy.tags %}
+                                                    <a href="{{taglink}}">
+                                                        <span class="label label-success comb3">{{tag}}</span>
+                                                    </a>
+                                                {% endfor %}
+                                            {% endif %}
+                                        </div>
+                                        {% if item.image is defined %}
+                                            <p>
+                                                <img src="{{ thumbnail(item.image, 640,160) }}" class="img-responsive">
+                                            </p>
+                                        {% endif %}
+                                        <p>
+                                            {{item.body|excerpt(400)}}
+                                        </p>
+                                        <a href="{{item.link}}" class="leia-mais">Leia +</a>
+                                    </div>
+                                {% endfor %}
+
+                            {% else %}
+                                <div class="col-xs-12 item-list-page" style="padding-bottom:40px;">
+                                    <h2>Nenhum artigo encontrado</h2>
+                                </div>
+                            {% endif %}
+
+                            {{ pager('artigos') }}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-xs hidden-sm">
+                {% include 'partials/_sidebar_right.twig' %}
+            </div>
+        </div>
+    </div>
+</div><!--/.conteudo-central -->
+{% include 'partials/_footer.twig' %}

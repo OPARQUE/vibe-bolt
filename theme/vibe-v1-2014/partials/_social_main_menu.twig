@@ -1,0 +1,7 @@
+<div class="col-md-12">
+    {% for item in menu %}
+        <a class="{{item.class}}" href="{{ item.link }}">
+            <span class="{{ item.icon }}"></span>
+        </a>
+    {% endfor %}
+</div>

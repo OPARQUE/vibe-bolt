@@ -1,0 +1,108 @@
+[
+    {
+        "name": "bolt/menueditor",
+        "version": "2.0.1",
+        "version_normalized": "2.0.1.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/bacbos/bolt-menu-editor.git",
+            "reference": "b42e7e7b04f4070085a60e8dcc42e877d4987710"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/bacbos/bolt-menu-editor/zipball/b42e7e7b04f4070085a60e8dcc42e877d4987710",
+            "reference": "b42e7e7b04f4070085a60e8dcc42e877d4987710",
+            "shasum": ""
+        },
+        "require": {
+            "bolt/bolt": ">=2.0.0,<3.0.0"
+        },
+        "time": "2014-11-03 18:04:40",
+        "type": "bolt-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "2.0.*"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "init.php"
+            ],
+            "psr-4": {
+                "MenuEditor\\": ""
+            }
+        },
+        "authors": [
+            {
+                "name": "Steven Wüthrich / bacbos lab",
+                "email": "steven.wuethrich@me.com"
+            }
+        ],
+        "description": "A visual MenuEditor for Bolt CMS",
+        "keywords": [
+            "admin",
+            "editor",
+            "menu",
+            "tool",
+            "visual"
+        ],
+        "support": {
+            "source": "https://github.com/bacbos/bolt-menu-editor/tree/2.0.1",
+            "issues": "https://github.com/bacbos/bolt-menu-editor/issues"
+        }
+    },
+    {
+        "name": "bolt/simpleforms",
+        "version": "0.10",
+        "version_normalized": "0.10.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/jadwigo/SimpleForms.git",
+            "reference": "6961b54b36a0bb16f24d4b5874f67392a72df4f5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/jadwigo/SimpleForms/zipball/6961b54b36a0bb16f24d4b5874f67392a72df4f5",
+            "reference": "6961b54b36a0bb16f24d4b5874f67392a72df4f5",
+            "shasum": ""
+        },
+        "require": {
+            "bolt/bolt": ">=2.0.0,<3.0.0"
+        },
+        "time": "2014-12-11 22:38:31",
+        "type": "bolt-extension",
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.*"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "init.php"
+            ],
+            "psr-4": {
+                "Bolt\\Extension\\Bolt\\SimpleForms\\": ""
+            }
+        },
+        "authors": [
+            {
+                "name": "Lodewijk Evers",
+                "email": "lodewijk@twokings.nl",
+                "homepage": "https://github.com/jadwigo"
+            }
+        ],
+        "description": "This extension will allow you to insert simple forms on your site, for users to get in touch, send you a quick note or something like that. To use, configure the required fields in config.yml, and place <code>{{ simpleform('contact') }}</code> in your templates.",
+        "keywords": [
+            "email",
+            "forms",
+            "input",
+            "upload"
+        ],
+        "support": {
+            "source": "https://github.com/jadwigo/SimpleForms/tree/0.10",
+            "issues": "https://github.com/jadwigo/SimpleForms/issues"
+        }
+    }
+]

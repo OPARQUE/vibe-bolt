@@ -1,0 +1,52 @@
+{% include 'partials/_header.twig' %}
+<div class="conteudo-central">
+    <div class="container">
+        <div class="row">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+            <div class="col-md-7 col-sm-8 col-xs-12">
+                <div class="row pagina">
+                    <div class="col-xs-12 comb1" style="margin-top: 20px;width:100%;height:60px;"></div>
+                    <div class="col-md-12">
+                        <div class="row">
+                            {% if search is not empty %}
+                                <div class="col-xs-12" style="margin-top:40px;">
+                                    <h3>Resultados encontrados para <span style="color:red;">{{ search }}</span>: {{ searchresult.no_of_results }}</h3>
+                                </div>
+                            {% endif %}
+                            {% for record in records %}
+                                <div class="col-xs-12 item-list-page">
+                                    <h2><a href="{{record.link}}">{{record.titulo}}</a></h2>
+                                    <h4>{{record.resumo}}</h4>
+                                    <div class="meta-post">
+                                        {{record.datepublish|localdate()}} - postado por <strong>{{record.user.displayname}}</strong><br>
+                                        {% if record.taxonomy.tags is defined %}
+                                            {% for taglink, tag in record.taxonomy.tags %}
+                                                <a href="{{taglink}}">
+                                                    <span class="label label-success comb3">{{tag}}</span>
+                                                </a>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    {% if record.image != '' %}
+                                        <p>
+                                            <img src="{{ thumbnail(record.image, 640,160) }}" class="img-responsive">
+                                        </p>
+                                    {% endif %}
+                                    <p>
+                                        {{record.body|excerpt(400)}}
+                                    </p>
+                                    <a href="{{record.link}}" class="leia-mais">Leia +</a>
+                                </div>
+                            {% endfor %}
+                            {{ pager('artigos') }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-xs hidden-sm">
+                {% include 'partials/_sidebar_right.twig' %}
+            </div>
+        </div>
+    </div>
+</div><!--/.conteudo-central -->
+{% include 'partials/_footer.twig' %}

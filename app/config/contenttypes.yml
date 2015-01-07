@@ -1,0 +1,278 @@
+# This file defines the contenttypes on the website. See the documentation for
+# details: http://docs.bolt.cm/content#defining-contenttypes
+
+# Pages can be used for the more 'static' pages on your site. Things like
+# 'about us', 'contact' or a 'disclaimer'. This content-type has a 'templateselect'
+# field, which allows you to override the record_template setting for an
+# individual page.
+# The taxonomy for this contenttype is defined as 'chapters', which is a so-called
+# "grouping" taxonomy. This way you can easily group sets of pages that logically
+# belong together. If your site has a 'services' section, in which you'd like to
+# list the different types of services a company provides, you can group these
+# together.
+
+secoes:
+    name: Seções
+    singular_name: Secao
+    fields:
+        titulo:
+            label: Título
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: titulo
+        capa:
+            label: Imagem de Capa
+            type: image
+        body:
+            label: Descrição
+            type: html
+            height: 150px
+        menu:
+            label: Menu
+            type: text
+            postfix: Digite o nome (slug) do menu que aparecerá nesta seção (o texto escrito aqui deve ser idêntico ao slug definido no menu).
+        template:
+            type: templateselect
+            filter: '*-listing.twig'
+    searchable: false
+    show_on_dashboard: false
+
+paginas:
+    name: Páginas
+    singular_name: Página
+    fields:
+        titulo:
+            label: Título
+            type: text
+            class: large
+            group: conteúdo
+        slug:
+            type: slug
+            uses: titulo
+        descricao:
+            type: html
+            height: 150px
+        body:
+            type: html
+            height: 300px
+    relations:
+        secoes:
+            multiple: false
+            label: Escolha a seção que esta página pertence
+            order: -id
+    record_template: page.twig
+    recordsperpage: 10
+    icon_many: fa:file
+    show_on_dashboard: false
+
+
+# Entries can be used for things like 'news' or 'blogpostings'. They have a 'teaser',
+# which can be used for a short blurb on listing-pages, allowing visitors to
+# click-through to the rest of the entry. It also has fields for an image and an
+# optional video.
+# A relation is defined to the pages contenttype. This way you can refer to a page
+# from your news-item.
+# This contenttype defines 'categories' and 'tags' as taxonomies, allowing the
+# editor to use both to categorize a specific entry.
+# The 'sort' is set to "datepublish DESC", which means that newer entries will
+# show above older entries.
+
+artigos:
+    name: Artigos No Flow
+    singular_name: Artigo
+    fields:
+        título:
+            type: text
+            class: large
+            group: conteúdo
+        titulo_destaque:
+            label: Título de Destaque
+            postfix: Esse título pode aparecer em situações especiais, como na página inicial, como título mais chamativo
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: titulo
+        resumo:
+            label: Resumo
+            postfix: Linha fina, geralmente aparece abaixo do título
+            type: html
+            height: 150px
+        body:
+            label: Conteúdo da página
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    relations:
+        secoes:
+            multiple: false
+            label: Escolha a seção que esta página pertence
+            order: -id
+    taxonomy: [ categorias, tags ]
+    record_template: record.twig
+    listing_template: no-flow-listing.twig
+    listing_records: 6
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 6
+    
+artigos-radio:
+    name: Artigos Na Rádio
+    singular_name: Artigo Na Rádio
+    fields:
+        título:
+            type: text
+            class: large
+            group: conteúdo
+        titulo_destaque:
+            label: Título de Destaque
+            postfix: Esse título pode aparecer em situações especiais, como na página inicial, como título mais chamativo
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: titulo
+        resumo:
+            label: Resumo
+            postfix: Linha fina, geralmente aparece abaixo do título
+            type: html
+            height: 150px
+        body:
+            label: Conteúdo da página
+            type: html
+            height: 300px
+        image:
+            type: image
+            group: media
+        video:
+            type: video
+    relations:
+        secoes:
+            multiple: false
+            label: Escolha a seção que esta página pertence
+            order: -id
+    taxonomy: [ categorias-radio , tags-radio ]
+    record_template: record.twig
+    listing_template: na-radio-listing.twig
+    listing_records: 6
+    default_status: publish
+    sort: -datepublish
+    recordsperpage: 6
+
+slides:
+    name: Slides
+    singular_name: Slide
+    fields:
+        titulo:
+            label: Título
+            type: text
+            class: large
+        slug:
+            type: slug
+            uses: titulo
+        descricao:
+            postfix: Linha fina abaixo do título
+            type: text
+        imagem:
+            type: image
+        url:
+            type: text
+            pattern: url
+        destino:
+            type: select
+            values: [ _blank, _self ]
+            postfix: '_blank = Nova Janela<br>_self = Mesma Janela<br><hr>'
+    searchable: false
+    recordsperpage: 10
+    viewless: true
+    show_on_dashboard: false
+
+destaques:
+    name: Destaques
+    singular_name: Destaque
+    fields:
+        titulo:
+            label: Título
+            type: text
+        slug:
+            type: slug
+            uses: titulo
+    relations:
+        artigos:
+            multiple: true
+            label: Escolha os artigos para o destaque da sidebar
+            order: -id
+            format: "<span>(№ {{ item.id }})</span> {{ item.titulo|escape }}"
+            postfix: "<br><hr>"
+    searchable: false
+    recordsperpage: 10
+    viewless: true
+    show_on_dashboard: false
+
+# Configurações usadas dentro do site
+# Este tipo de conteúdo só tem um registro, e caso
+# precise adicionar um novo item de configuração,
+# deve-se criar um novo campo aqui.
+configuracoes:
+    name: Configurações
+    singular_name: Configuração
+    fields:
+        sobre:
+            label: Sobre
+            type: html
+            height: 100px
+            group: textos
+        slug:
+            type: slug
+            uses: sobre
+        sobre1:
+            label: Sobre | Terceira Coluna
+            type: html
+            height: 100px
+        logo1:
+            label: Logo Parceiros | 1
+            type: image
+            group: imagens
+        url1:
+            label: Url Parceiros | 1
+            type: text
+            pattern: url
+        logo2:
+            label: Logo Parceiros | 2
+            type: image
+        url2:
+            label: Url Parceiros | 2
+            type: text
+            pattern: url
+    recordsperpage: 1
+    searchable: false
+    viewless: true
+    show_on_dashboard: false
+
+# possible field types:
+# text - varchar(256) - input type text.
+# integer - integer - Input field for integer numbers.
+# float - double - Input field for floating numbers, stored as 'Double'.
+# geolocation - text (65kb) - Input field for geolocation. Enter an address, and the location is geocoded to latitude/longitude coordinates
+# imagelist - text (65kb) - Input type for imagelists. Add multiple images with a description. Useful for image sliders, galleries, etcetera.
+# image - varchar(256) - image select/upload widget, stored as filename.
+# file - varchar(256) - file select/upload widget, stored as filename.
+# filelist - text (65kb) - Input type for a list of files. Including a description.
+# video - varchar(256) - Video embed widget, stored as filename.
+# html - text (65kb) - wysiwyg element.
+# textarea - varchar(32768) - Simple, plain < textarea > field.
+# markdown - varchar(32768) - Simple, plain < textarea > field, which is parsed as Markdown text.
+# datetime - datetime - date and time selector widget.
+# date - datetime - date selector widget.
+# select - varchar(256) - select with predefined values
+# templateselect - varchar(256) - select with template filenames
+# checkbox - integer - checkbox-field which is 1 (checked) or 0 (unchecked)
+
+
+# number (deprecated) - input type decimal(18,9), useful for storing number that need to be sortable

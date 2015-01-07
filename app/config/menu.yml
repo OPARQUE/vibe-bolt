@@ -1,0 +1,102 @@
+# This file defines the menus on the website. See the documentation for
+# details: http://docs.bolt.cm/menus
+
+main:
+  - label: No Flow
+    id: eu
+    title: No Flow
+    path: secao/no-flow
+    class: first
+  - label: Na Rádio
+    path: secao/na-radio
+  - label: Na Tv
+    path: pagina/em-breve
+  - label: Grupo Criativo
+    path: pagina/porque-fazemos
+    class: last
+
+categorias:
+  - label: Listinhas
+    title: Listinhas
+    path: categoria/listinhas
+    class: first
+  - label: Notinhas Transadas
+    title: Notinhas Transadas
+    path: categoria/transadas
+  - label: Espaço Ciborgue
+    title: Espaço Ciborgue
+    path: categoria/ciborgue
+  - label: Política Delicinha
+    title: Política Delicinha
+    path: categoria/delicinha
+  - label: Arteiros
+    title: Arteiros
+    path: categoria/arteiros
+  - label: Êêê Vidão
+    title: Êêê Vidão
+    path: categoria/vidao
+    class: last
+
+na-radio:
+  - label: Top 10
+    title: Top 10
+    path: categoria-radio/tops
+    class: first
+  - label: Promoções
+    title: Promoções
+    path: categoria-radio/promocoes
+  - label: Podcast
+    title: Podcast
+    path: categoria-radio/podcasts
+  - label: 
+    title: Facebook
+    link: http://www.facebook.com
+    class: fa fa-facebook
+    tipo: icone
+  - label: 
+    title: Youtube
+    link: http://www.youtube.com
+    class: fa fa-youtube
+    tipo: icone
+  - label: 
+    title: Instagram
+    link: http://www.instagram.com
+    class: fa fa-instagram
+    tipo: icone
+    
+na-tv:
+  - label: Em Breve
+    title: Em Breve
+    path: pagina/em-breve
+    class: first
+
+grupo:
+  - label: Porque fazemos
+    title: Porque fazemos
+    path: pagina/porque-fazemos
+    class: first
+  - label: O que fazemos
+    title: O que fazemos
+    path: pagina/o-que-fazemos
+  - label: Como fazemos
+    title: Como fazemos
+    path: pagina/como-fazemos
+  - label: Quem faz
+    title: Quem faz
+    path: pagina/quem-faz
+    class: last
+
+socialmain:
+  - label: Facebook
+    title: Facebook
+    link: http://www.facebook.com/namesmavibe
+    class: first
+    icon: 'fa fa-facebook'
+  - label: Youtube
+    title: Youtube
+    link: http://www.Youtube.com/namesmavibe
+    icon: 'fa fa-youtube'
+  - label: Instagram
+    title: Instagram
+    link: http://www.Instagram.com/namesmavibe
+    icon: 'fa fa-instagram'

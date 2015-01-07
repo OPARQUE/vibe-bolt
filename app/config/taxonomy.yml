@@ -1,0 +1,46 @@
+# This file defines the different types of taxonomies in Bolt. See the
+# documentation for details: http://docs.bolt.cm/taxonomies#taxonomies
+
+secoes:
+    slug: secoes
+    singular_slug: secao
+    name: Seções
+    behaves_like: grouping
+    options: { flow: "No Flow", radio: "Na Rádio", tv: "Na TV", grupo: "Grupo Criativo" }
+    has_sortorder: true
+
+tags:
+    slug: tags
+    singular_slug: tag
+    behaves_like: tags
+    postfix: "Add some freeform tags. Start a new tag by typing a comma or space."
+    listing_template: no-flow-listing.twig
+    #listing_template: tag-listing.twig #custom template
+    
+tags-radio:
+    slug: tags-radio
+    singular_slug: tag-radio
+    behaves_like: tags
+    postfix: "Add some freeform tags. Start a new tag by typing a comma or space."
+    listing_template: na-radio-listing.twig
+    #listing_template: tag-listing.twig #custom template
+
+categorias:
+    name: Categorias
+    slug: categorias
+    singular_name: categoria
+    singular_slug: categoria
+    behaves_like: categories
+    multiple: true
+    listing_template: no-flow-listing.twig
+    options: { listinhas: "Listinhas", transadas: "Notinhas Transadas", ciborgue: "Espaço Ciborgue", delicinha: "Política Delicinha", arteiros: "Arteiros", vidao: "Êêê Vidão" }
+
+categorias-radio:
+    name: Categorias da Rádio
+    slug: categorias-radio
+    singular_name: Categoria da Rádio
+    singular_slug: categoria-radio
+    behaves_like: categories
+    multiple: false
+    listing_template: na-radio-listing.twig
+    options: { tops: "Top 10", promocoes: "Promoções", podcasts: "Podcasts" }

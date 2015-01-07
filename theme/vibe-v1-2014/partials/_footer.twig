@@ -1,0 +1,54 @@
+{% setcontent configs = 'configuracoes/1' %}
+<footer class="rodape">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-4 col-xs-12">
+                <h4>
+                    <a href="#"><span class="fa fa-envelope-square"></span></a>
+                    <a href="#"><span class="fa fa-facebook-square"></span></a>
+                    <a href="#"><span class="fa fa-youtube-square"></span></a>
+                    <a href="#"><span class="fa fa-instagram"></span></a>
+                </h4>
+                <div class="news">RECEBA NEWS</div>
+                <form class="form-news">
+                    <input type="text" name="nome" placeholder="NOME" required=""/>
+                    <input type="email" name="email" placeholder="E-MAIL" required=""/>
+                    <input type="submit" value="enviar"/>
+                </form>
+                {{ simpleform('newsletter') }}
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                <h4>Sobre</h4>
+                {{ configs.sobre }}
+            </div>
+            <div class="col-sm-4 col-xs-12">
+                {{ configs.sobre1 }}
+                <p style="margin-top:30px;">
+                    <img src="{{ paths.theme }}assets/img/regua-logos-rodape.png" class="img-responsive center-block"/>
+                </p>
+            </div>
+        </div>
+    </div>
+</footer>
+<div class="copiright">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                VIBE | {{ "now"|date('Y') }} - Todos os direitos reservados
+            </div>
+            <div class="col-md-6 desenvolvido-por">
+                <span class='pull-right'>DESENVOLVIDO POR <a href='http://www.oparque.art.br'>OPARQUE</a></span>
+            </div>
+            <div class='clearfix'></div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="{{ paths.app }}view/js/jquery.magnific-popup.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="{{ paths.theme }}assets/js/bootstrap.min.js"></script>
+<script src="{{ paths.theme }}assets/js/main.js"></script>
+</body>
+</html>
