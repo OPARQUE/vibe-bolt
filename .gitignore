@@ -3,3 +3,5 @@ app/cache/
 app/database/*
 *_local.yml
 *_beta.yml
+error_log
+.htaccess
