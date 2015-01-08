@@ -31,10 +31,8 @@
                                         {% endfor %}
                                     {% endif %}
                                 </div>
-                                {% if record.image is defined %}
-                                    <p>
-                                        {{ record.image|popup(640, 300) }}
-                                    </p>
+                                {% if record.image != '' %}
+                                    <img src="{{ thumbnail(record.image, 640, 300) }}" class="img-responsive" />
                                 {% endif %}
                                 <p>
                                     {{record.body}}

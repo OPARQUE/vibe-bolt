@@ -1,4 +1,7 @@
 $(document).ready(function() {
+    
+    //$('.item-list-page img').addClass('img-responsive');
+    
     $(".tile-item").hover(function () {
         $(this).find(".descricao").animate({
             height: "toggle"

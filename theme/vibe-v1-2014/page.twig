@@ -20,10 +20,8 @@
                             <!-- Start record -->
                             <div class="col-xs-12 item-list-page">
                                 <h2 class="text-uppercase">{{record.titulo}}</h2>
-                                {% if record.image is defined %}
-                                    <p>
-                                        {{ record.image|popup(640, 300) }}
-                                    </p>
+                                {% if record.image != '' %}
+                                    <img src="{{ thumbnail(record.image, 640, 300) }}" class="img-responsive" />
                                 {% endif %}
                                 <p>
                                     {{record.body}}

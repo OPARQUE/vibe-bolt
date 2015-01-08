@@ -50,18 +50,18 @@ na-radio:
     path: categoria-radio/podcasts
   - label: 
     title: Facebook
-    link: http://www.facebook.com
+    link: https://www.facebook.com/cidadefm977
     class: fa fa-facebook
     tipo: icone
   - label: 
-    title: Youtube
-    link: http://www.youtube.com
-    class: fa fa-youtube
+    title: Instagram
+    link: http://instagram.com/cidadefm977
+    class: fa fa-instagram
     tipo: icone
   - label: 
-    title: Instagram
-    link: http://www.instagram.com
-    class: fa fa-instagram
+    title: Twitter
+    link: http://www.twitter.com/cidadefm977
+    class: fa fa-twitter
     tipo: icone
     
 na-tv:
@@ -94,9 +94,9 @@ socialmain:
     icon: 'fa fa-facebook'
   - label: Youtube
     title: Youtube
-    link: http://www.Youtube.com/namesmavibe
+    link: https://www.youtube.com/channel/UChkrW5cPYhygbrFBryUbgwA
     icon: 'fa fa-youtube'
   - label: Instagram
     title: Instagram
-    link: http://www.Instagram.com/namesmavibe
+    link: http://www.instagram.com/namesmavibe
     icon: 'fa fa-instagram'
