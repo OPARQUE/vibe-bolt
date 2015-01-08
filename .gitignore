@@ -1,5 +1,6 @@
 nbproject/*
 app/cache/*
+!app/cache/index.html
 app/database/*
 *_local.yml
 *_beta.yml
