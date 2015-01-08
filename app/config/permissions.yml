@@ -22,16 +22,31 @@ roles:
         label: Editor
     chief-editor:
         description: This user can edit any content in the system.
-        label: Chief Editor
+        label: Editor-chefe
     admin:
         description: User-level administrator.
-        label: Administrator
+        label: Administrador
     developer:
         description: Developer access. Only required to change system-level settings.
         label: Developer
     guest:
         description: This user can log on, but is not allowed to edit any content.
-        label: Guest Editor
+        label: Editor Visitante
+    editor-radio:
+        description: Este tipo de usuário pode inserir conteúdo de rádio
+        label: Editor de conteúdo da Rádio
+    editor-flow:
+        description: Este tipo de usuário pode inserir conteúdo do No Flow
+        label: Editor de conteúdo do No Flow
+    editor-destaques:
+        description: Este tipo de usuário pode alterar os destaques
+        label: Editor de destaques da Sidebar
+    editor-slides:
+        description: Este tipo de usuário pode inserir destaques na home
+        label: Editor de slides da Home
+    editor-configuracoes:
+        description: Este tipo de usuário pode alterar configurações gerais do Portal
+        label: Editor de Configurações Gerais
 
 # Now we'll define some permissions. Each permission comes with a list of roles
 # that grant access.
@@ -58,7 +73,7 @@ global:
     fileedit: [ admin, developer ]
     files:config: [ developer ]
     files:theme: [ developer ]
-    files:uploads: [ admin, developer, chief-editor, editor ]
+    files:uploads: [ admin, developer, chief-editor, editor, editor-radio, editor-flow ]
     files: [ editor, admin, developer ]
     prefill: [ developer ]
     profile: [ everyone ] # edit own profile
@@ -132,13 +147,21 @@ global:
 # - frontend: allows front-end access to records (note that this requires the
 #             'frontend_permission_checks' global configuration setting, for
 #             backwards-compatibility reasons as well as performance)
+#contenttype-all:
+#    edit: [ developer, admin, chief-editor ]
+#    create: [ developer, admin, chief-editor ]
+#    publish: [ developer, admin, chief-editor ]
+#    depublish: [ developer, admin, chief-editor ]
+#    delete: [ developer, admin ]
+#    change-ownership: [ developer, admin ]
+
 contenttype-all:
-    edit: [ developer, admin, chief-editor ]
-    create: [ developer, admin, chief-editor ]
-    publish: [ developer, admin, chief-editor ]
-    depublish: [ developer, admin, chief-editor ]
-    delete: [ developer, admin ]
-    change-ownership: [ developer, admin ]
+    edit: []
+    create: []
+    publish: []
+    depublish: []
+    delete: []
+    change-ownership: []
 
 contenttype-default:
     edit: [ editor ]
@@ -148,6 +171,63 @@ contenttype-default:
     frontend: [ anonymous ]
 
 contenttypes:
+    secoes:
+        edit: [ developer, admin ]
+        create: [ root ]
+        publish: [ root ]
+        depublish: [ root ]
+        delete: [ root ]
+        change-ownership: [ root ]
+        view: [ root ]
+    paginas:
+        edit: [ developer, admin ]
+        create: [ developer, admin ]
+        publish: [ root ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin, owner ]
+        change-ownership: [ developer, admin, owner ]
+        view: [ everyone ]
+    artigos:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-flow ]
+        publish: [ developer, admin, editor-flow ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+    artigos-radio:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-radio ]
+        publish: [ developer, admin, editor-radio ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+    destaques:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-destaques ]
+        publish: [ developer, admin, editor-destaques ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+    slides:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-slides ]
+        publish: [ developer, admin, editor-slides ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+    configuracoes:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-configuracoes ]
+        publish: [ developer, admin, editor-configuracoes ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+
 
 # This is an example of how to define Contenttype specific permissions
 #

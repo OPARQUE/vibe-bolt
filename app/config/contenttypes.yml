@@ -223,14 +223,18 @@ configuracoes:
     name: Configurações
     singular_name: Configuração
     fields:
+        titulo:
+            label: Nome da Configuração
+            type: text
+            group: textos
+            class: large
         sobre:
             label: Sobre
             type: html
             height: 100px
-            group: textos
         slug:
             type: slug
-            uses: sobre
+            uses: titulo
         sobre1:
             label: Sobre | Terceira Coluna
             type: html
