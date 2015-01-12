@@ -250,6 +250,9 @@ a.ativo2 {
   margin-top: 10px;
 }
 /* MENUS */
+.menu-lateral-main > ul > li {
+  z-index: 9999;
+}
 .menu-lateral-main > ul > li > a {
   color: #3c3c3c;
   background: #ff424e;
