@@ -125,9 +125,12 @@ a.ativo2 {
 .overlay-click-home {
   display: block;
   position: absolute;
-  z-index: 9999999;
+  z-index: 3;
   width: 382px;
   height: 150px;
+}
+#videoAlfa {
+  z-index: 2;
 }
 .topo {
   padding: 30px 0;
