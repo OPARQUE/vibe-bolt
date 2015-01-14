@@ -1,6 +1,5 @@
 {
     "require": {
-        "bolt/menueditor": "2.0.1",
         "bolt/simpleforms": "0.10"
     },
     "repositories": {

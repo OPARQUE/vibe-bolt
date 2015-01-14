@@ -4,59 +4,8 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "bb412ba53806a24e028c5127aad30517",
+    "hash": "c7947a4aac0945b838d74376f0f90089",
     "packages": [
-        {
-            "name": "bolt/menueditor",
-            "version": "2.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/bacbos/bolt-menu-editor.git",
-                "reference": "b42e7e7b04f4070085a60e8dcc42e877d4987710"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/bacbos/bolt-menu-editor/zipball/b42e7e7b04f4070085a60e8dcc42e877d4987710",
-                "reference": "b42e7e7b04f4070085a60e8dcc42e877d4987710",
-                "shasum": ""
-            },
-            "require": {
-                "bolt/bolt": ">=2.0.0,<3.0.0"
-            },
-            "type": "bolt-extension",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.*"
-                }
-            },
-            "autoload": {
-                "files": [
-                    "init.php"
-                ],
-                "psr-4": {
-                    "MenuEditor\\": ""
-                }
-            },
-            "authors": [
-                {
-                    "name": "Steven Wüthrich / bacbos lab",
-                    "email": "steven.wuethrich@me.com"
-                }
-            ],
-            "description": "A visual MenuEditor for Bolt CMS",
-            "keywords": [
-                "admin",
-                "editor",
-                "menu",
-                "tool",
-                "visual"
-            ],
-            "support": {
-                "source": "https://github.com/bacbos/bolt-menu-editor/tree/2.0.1",
-                "issues": "https://github.com/bacbos/bolt-menu-editor/issues"
-            },
-            "time": "2014-11-03 18:04:40"
-        },
         {
             "name": "bolt/simpleforms",
             "version": "0.10",

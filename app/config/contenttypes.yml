@@ -254,6 +254,10 @@ configuracoes:
             label: Url Parceiros | 2
             type: text
             pattern: url
+        video:
+            label: Vídeo da Home
+            type: video
+            group: video
     recordsperpage: 1
     searchable: false
     viewless: true

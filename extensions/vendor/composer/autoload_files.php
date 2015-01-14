@@ -6,7 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    $vendorDir . '/bolt/menueditor/init.php',
     $vendorDir . '/bolt/simpleforms/init.php',
     $baseDir . '/installer.php',
 );

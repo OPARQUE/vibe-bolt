@@ -6,6 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'MenuEditor\\' => array($vendorDir . '/bolt/menueditor'),
     'Bolt\\Extension\\Bolt\\SimpleForms\\' => array($vendorDir . '/bolt/simpleforms'),
 );

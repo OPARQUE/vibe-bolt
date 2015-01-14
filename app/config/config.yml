@@ -148,7 +148,7 @@ accept_file_types: [ twig, html, js, css, scss, gif, jpg, jpeg, png, ico, zip, t
 # by default, if you change it here, it will only be accessible through the value set in
 # 'path'. Keep the path simple: lowercase only, no extra slashes or other special characters.
 branding:
-  name: OPARQUE CMS
+  name: GERENCIADOR
   path: /admin
   provided_by: [ contato@oparque.art.br, "OPARQUE" ]
 
