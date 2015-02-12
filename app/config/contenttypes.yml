@@ -214,6 +214,26 @@ destaques:
     recordsperpage: 10
     viewless: true
     show_on_dashboard: false
+    
+programas-radio:
+    name: Programas da Rádio
+    singular_name: Programa
+    fields:
+        titulo:
+            label: Título
+            type: text
+        slug:
+            type: slug
+            uses: titulo
+        imagem:
+            type: image
+        url:
+            type: text
+            pattern: url
+        destino:
+            type: select
+            values: [ _blank, _self ]
+            postfix: '_blank = Nova Janela<br>_self = Mesma Janela<br><hr>'
 
 # Configurações usadas dentro do site
 # Este tipo de conteúdo só tem um registro, e caso

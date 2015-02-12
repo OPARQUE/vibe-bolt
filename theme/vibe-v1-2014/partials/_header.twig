@@ -7,12 +7,19 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>
-            {% if record.title is defined %}{{ record.title|striptags }} | {% endif %}
-            {{ app.config.get('general/sitename') }}
-            {% if record.title is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff') }}{% endif %}
-        </title>
+        <meta name="description" content="{% if record.resumo is not empty %}{{ record.resumo|striptags|excerpt }}{% elseif record.descricao is not empty %}{{ record.descricao|striptags|excerpt }}{% elseif record.body is not empty %}{{ record.body|striptags|excerpt }}{% else %}{{ app.config.get('general/description')|striptags|excerpt }}{% endif %}"/>
+        <title>{% if record.titulo is defined %}{{ record.titulo|striptags }} | {% endif %}{{ app.config.get('general/sitename')|striptags }} {% if record.titulo is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff')|striptags }}{% endif %}</title>
 
+        <meta property="og:locale" content="{{ app.config.get('general/locale')|striptags }}" />
+        <meta property="og:title" content="{% if record.titulo is defined %}{{ record.titulo|striptags }} | {% endif %}{{ app.config.get('general/sitename')|striptags }} {% if record.titulo is not defined and app.config.get('general/payoff') %} | {{ app.config.get('general/payoff')|striptags }}{% endif %}" />
+        <meta property="og:description" content="{% if record.resumo is not empty %}{{ record.resumo|striptags|excerpt }}{% elseif record.descricao is not empty %}{{ record.descricao|striptags|excerpt }}{% elseif record.body is not empty %}{{ record.body|striptags|excerpt }}{% else %}{{ app.config.get('general/description')|striptags|excerpt }}{% endif %}" />
+        <meta property="og:url" content="{{ paths.currenturl }}" />
+        <meta property="og:site_name" content="VIBE" />
+        <meta property="article:publisher" content="https://www.facebook.com/namesmavibe" />
+        <meta property="article:published_time" content="{{ record.datepublish }}" />
+        <meta property="article:modified_time" content="{{ record.datechanged }}" />
+        <meta property="og:image" content="{% if record.image is not empty %}{{ paths.hosturl ~ image(record.image) }}{% elseif record.imagem is not empty %}{{ paths.hosturl ~ image(record.imagem) }}{% else %}{{ paths.hosturl ~ paths.theme ~ 'assets/img/img-1.jpg' }}{% endif %}" />
+        
         <!-- Bootstrap -->
         <link href="{{ paths.theme }}assets/css/bootstrap.min.css" rel="stylesheet">
         <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

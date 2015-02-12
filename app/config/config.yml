@@ -13,6 +13,7 @@ database:
 # The name of the website
 sitename: Vibe
 payoff: Na Mesma Vibe
+description: Somos um grupo criativo que comunica propósito, que acredita na comunicação no estado da arte, na comunicação como forma de mudar o mundo.
 
 # The theme to use. Be sure to copy the {theme_path}/base-2014 folder, and change the
 # name here accordingly. Don't edit the templates in theme/base-2014, because

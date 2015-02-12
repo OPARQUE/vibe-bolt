@@ -73,8 +73,8 @@ global:
     fileedit: [ admin, developer ]
     files:config: [ developer ]
     files:theme: [ developer ]
-    files:uploads: [ admin, developer, chief-editor, editor, editor-radio, editor-flow ]
-    files: [ editor, admin, developer ]
+    files:uploads: [ editor, admin, developer, chief-editor, editor, editor-radio, editor-flow ]
+    files: [ editor, admin, developer, chief-editor, editor, editor-radio, editor-flow ]
     prefill: [ developer ]
     profile: [ everyone ] # edit own profile
     settings: [ admin, developer, everyone ]
@@ -178,7 +178,7 @@ contenttypes:
         depublish: [ root ]
         delete: [ root ]
         change-ownership: [ root ]
-        view: [ root ]
+        view: [ developer, admin ]
     paginas:
         edit: [ developer, admin ]
         create: [ developer, admin ]
@@ -196,6 +196,14 @@ contenttypes:
         change-ownership: [ developer, admin ]
         view: [ everyone ]
     artigos-radio:
+        edit: [ developer, admin, owner ]
+        create: [ developer, admin, editor-radio ]
+        publish: [ developer, admin, editor-radio ]
+        depublish: [ developer, admin, owner ]
+        delete: [ developer, admin ]
+        change-ownership: [ developer, admin ]
+        view: [ everyone ]
+    programas-radio:
         edit: [ developer, admin, owner ]
         create: [ developer, admin, editor-radio ]
         publish: [ developer, admin, editor-radio ]

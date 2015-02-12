@@ -33,18 +33,12 @@
                         </div>
 
                         <div class="row reblogs">
-                            <div class="col-xs-2">
-                                <a href="#"><img src="{{ paths.theme }}assets/img/logo-meninas-da-cidade.png" class="img-responsive"/></a>
-                            </div>
-                            <div class="col-xs-2 col-xs-offset-1">
-                                <a href="#"><img src="{{ paths.theme }}assets/img/logo-tpm.png" class="img-responsive"/></a>
-                            </div>
-                            <div class="col-xs-2 col-xs-offset-1">
-                                <a href="#"><img src="{{ paths.theme }}assets/img/logo-cidade-do-rock.png" class="img-responsive"/></a>
-                            </div>
-                            <div class="col-xs-2 col-xs-offset-1">
-                                <a href="#"><img src="{{ paths.theme }}assets/img/logo-intercidades.png" class="img-responsive"/></a>
-                            </div>
+                            {% setcontent programas = 'programas-radio' %}
+                            {% for item in programas %}
+                                <div class="col-xs-2">
+                                    <a href="{{ item.url }}" target="{{ item.destino }}"><img src="{{ thumbnail(item.imagem, 945,340) }}" class="img-responsive"/></a>
+                                </div>
+                            {% endfor %}
                         </div>
 
                         <div class="row">
