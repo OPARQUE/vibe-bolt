@@ -1,0 +1,96 @@
+<style type="text/css">
+    /* Player shoutcast */
+    #player_mi{
+        margin:0;
+        width:130px;
+        height:35px;
+        float:left;
+    }
+    .pl_control{
+        float:left;
+        margin:10px 0;
+    }
+    #stop_mi{
+        width:20px;
+        height:18px;
+        margin:5px 0;
+        background-image:url('http://www.midiaip.com.br/player/ffmp3-midia/bt_pause.png');
+        background-repeat:no-repeat;
+        cursor:pointer;
+        float:left;
+        display: none;
+    }
+    #play_mi{
+        width:20px;
+        height:18px;
+        float:left;
+        margin:5px 0;
+        background-image:url('http://www.midiaip.com.br/player/ffmp3-midia/bt_play.png');
+        background-repeat:no-repeat;
+        cursor:pointer;
+    }
+    #bg_mi{
+        width:auto;
+        height:10px;
+        float:right;
+        padding:5px 2px;
+        font-size:11px;
+        text-align:left;
+        color:#FFF;
+    }
+    #songtitle{
+        width:auto;
+        padding:15px 2px;
+        font-size:11px;
+        text-align:left;
+        color:#FFF;
+        float:left;
+        display:none;
+    }
+</style>
+<img src="{{ paths.theme }}assets/img/logo-radio-cidade-small.png" style="margin-right: 20px;float:left;"/>
+<div id="player_mi">
+    <div class="pl_control">
+        <div id="stop_mi"></div>
+        <div id="play_mi"></div>
+        <div id="bg_mi">Dê o play para ouvir</div>
+        <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="1" height="10" bgcolor="#ffffff">
+            <param name="movie" value="{{ paths.theme }}assets/swf/muses.swf" />
+            <param name="flashvars" value="url=http://cast.midiaip.com.br:9770/1&lang=auto&codec=aac&volume=75&introurl=&autoplay=true&tracking=true&jsevents=false&skin={{ paths.theme }}assets/swf/radio-cidade.xml&title=retro" />
+            <param name="wmode" value="window" />
+            <param name="allowscriptaccess" value="always" />
+            <param name="bgcolor" value="#ffffff" />
+            <param name="scale" value="noscale" />
+            <embed src="{{ paths.theme }}assets/swf/muses.swf" flashvars="url=http://cast.midiaip.com.br:9770/1&lang=auto&codec=aac&volume=75&introurl=&autoplay=true&tracking=true&jsevents=false&skin={{ paths.theme }}assets/swf/radio-cidade.xml&title=retro" width="88" scale="noscale" height="10" wmode="window" bgcolor="#FFFFFF" allowscriptaccess="always" type="application/x-shockwave-flash" />
+        </object>
+    </div>
+</div>
+<div id="songtitle"></div>
+<div class="clear"></div>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="http://www.midiaip.com.br/player/js/jquery.shoutcast.js"></script>
+<script type="text/javascript">
+    $('.pl_control object').css('display', 'none');
+    $('#stop_mi').click(function () {
+        $('.pl_control object').css('display', 'none');
+        $(this).css('display', 'none');
+        $('#play_mi').fadeIn('show');
+        $('#bg_mi').fadeIn('show');
+        $('#songtitle').css('display', 'none');
+    })
+    $('#play_mi').click(function () {
+        $('.pl_control object').fadeIn('show');
+        $(this).css('display', 'none');
+        $('#bg_mi').css('display', 'none');
+        $('#stop_mi').fadeIn('show');
+        $('#songtitle').css('display', 'block');
+    })
+    $.SHOUTcast({
+        host: 'cast.midiaip.com.br',
+        port: 9770,
+        interval: 70000,
+        stats: function () {
+            $('#songtitle').text(this.get('songtitle'));
+        }
+    }).startStats();
+</script>

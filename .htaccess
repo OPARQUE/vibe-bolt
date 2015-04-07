@@ -20,7 +20,7 @@ Options -Indexes -MultiViews
   RewriteRule cache/ - [F]
 
   # Some servers require the RewriteBase to be set. If so, set to the correct directory.
-  RewriteBase /vibe/
+#  RewriteBase /vibe-bolt/
   RewriteRule ^thumbs/(.*)$ ./app/classes/timthumb.php [L]
 
   RewriteCond %{REQUEST_FILENAME} !-f

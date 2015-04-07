@@ -1,0 +1,37 @@
+{% if record.taxonomy.tags is defined %}
+    <div class="row">
+        <h3 class="text-bg">
+            <span>POSTS RELACIONADOS</span>
+        </h3>
+    </div>
+    <div class="row">
+        {% set relationstags = record.taxonomy.tags|join(" || ") %}
+        {% setcontent relacionados = "artigos" where { tags: relationstags } limit 3 %}
+        {% for rel in relacionados %}
+            <div class="col-md-4 col-xs-6 item-home">
+                <a href="{{ rel.link }}" class="tile-item" style="background-image: url({{ thumbnail(rel.image, 205, 300) }});">
+                    <div class="corpo-item">
+                        <h4 class="text-bg">
+                            <span>{{ rel.titulo_destaque }}</span>
+                        </h4>
+                        <div class="meta">
+                            {% if rel.taxonomy.categorias is defined %}
+                                {% for link,valor in rel.taxonomy.categorias %}
+                                    {{ valor }} | 
+                                {% endfor %}
+                            {% endif %}
+                            <span class="glyphicon glyphicon-tags" style="font-size: 10px;"></span>&nbsp;&nbsp;
+                            {% for taglink, tag in rel.taxonomy.tags %}
+                                {{tag}} 
+                            {% endfor %}
+                        </div>
+                        <div class="descricao" style="display: none;">
+                            {{ rel.resumo|excerpt(80) }}
+                            <i class="fa fa-plus-square"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endif %}

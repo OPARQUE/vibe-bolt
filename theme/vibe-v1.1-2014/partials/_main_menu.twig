@@ -1,0 +1,77 @@
+<nav class="col-md-2 col-sm-4 col-xs-12 menu-lateral-main">
+    <ul>
+        <li>
+            <a class="text-uppercase {% if menu.0|current %} ativo2{% endif %}" href="{{ menu.0.link }}">{{ menu.0.label }}</a>
+            <div class="menu-categorias menu-flow col-md-offset-12 hidden-sm hidden-xs" style="display: none;">
+                <div class="area-barra-seta">
+                    <div class="barra-seta"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="text-uppercase">
+                            {% for categorias in app.config.get('menu/categorias') %}
+                                <li>
+                                    <a href="{{ paths.rooturl ~ categorias.path }}">{{ categorias.label }}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        {% setcontent ultimoartigo = 'artigos/latest/1' %}
+                        {% for item in ultimoartigo %}
+                            <img src="{{ thumbnail(item.image, 295, 196) }}" class="img-responsive">
+                            <h4>
+                                <a href="{{ item.link }}">{{ item.titulo }}</a>
+                            </h4>
+                            <p>
+                                {{item.resumo|excerpt(80)}}
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </li>
+        <li>
+            <a class="text-uppercase {% if menu.1|current %} ativo2{% endif %}" href="{{ menu.1.link }}">{{ menu.1.label }}</a>
+            <div class="menu-categorias menu-radio col-md-offset-12 hidden-sm hidden-xs" style="display: none;">
+                <div class="area-barra-seta">
+                    <div class="barra-seta"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="text-uppercase">
+                            {% for categoriasradio in app.config.get('menu/na-radio') %}
+                                <li><a href="{{ paths.rooturl ~ categoriasradio.path }}">{{ categoriasradio.label }}</a></li>
+                                {% endfor %}
+                            <li class="menu-separator"></li>
+                        </ul>
+                        <ul>
+                            {% setcontent programasradio = 'programas-radio' %}
+                            {% for item in programasradio %}
+                                <li>
+                                    <a href="{{item.url}}">{{item.titulo}}</a>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        {% setcontent ultimapromocao = 'artigos-radio/latest/1' where { 'categorias-radio': 'promocoes' } %}
+                        {% for item in ultimapromocao %}
+                            <img src="{{ thumbnail(item.image, 295, 196) }}" class="img-responsive">
+                            <h4>
+                                <a href="{{ item.link }}">{{ item.titulo }}</a>
+                            </h4>
+                            <p>
+                                {{item.resumo|excerpt(80)}}
+                            </p>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li>
+            <a class="text-uppercase {% if menu.2|current %} ativo2{% endif %}" href="{{ menu.2.link }}">{{ menu.2.label }}</a>
+        </li>
+    </ul>
+</nav>

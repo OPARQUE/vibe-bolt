@@ -1,0 +1,10 @@
+<muses-skin folder="http://www.midiaip.com.br/player/ffmp3-midia/" togglePlayStop="false">
+  <bg image="volume.png" x="2" y="0" ></bg>
+  <volume x="2" y="0" width="90" height="10" 
+      colOr1="#cccccc" color2="#ff0000"
+      barwidth="0"
+      barStep="5"
+      holderImage="bt_vol.png"
+	  mode="holder"  You-can-try-with-mode="bars or vholder"
+  />
+</muses-skin>

@@ -1,0 +1,35 @@
+<div class="row">
+    <div class="col-md-12">
+        <h3 class="titulo-destaques">Destaques</h3>
+    </div>
+    
+    {% setcontent destaques = 'destaques/1' %}
+    {% set artigosdestaques = destaques.related() %}
+    
+    {% for item in artigosdestaques %}
+        <div class="col-md-12 item-home">
+            <a href="{{item.link}}" class="tile-item" style="background-image: url({{ thumbnail(item.image, 280,300) }});">
+                <div class="corpo-item">
+                    <h3 class="text-bg">
+                        <span>{{item.titulo_destaque}}</span>
+                    </h3>
+                    <div class="meta">
+                        {% if item.taxonomy.categorias is defined %}
+                            {% for link,valor in item.taxonomy.categorias %}
+                                {{ valor }} | 
+                            {% endfor %}
+                        {% endif %}
+                        <span class="glyphicon glyphicon-tags" style="font-size: 10px;"></span>&nbsp;&nbsp;
+                        {% for taglink, tag in item.taxonomy.tags %}
+                            {{tag}} 
+                        {% endfor %}
+                    </div>
+                    <div class="descricao" style="display: none;">
+                        {{item.resumo|excerpt(80)}}
+                        <i class="fa fa-plus-square"></i>
+                    </div>
+                </div>
+            </a>
+        </div>
+    {% endfor %}
+</div>

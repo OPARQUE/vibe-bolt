@@ -1,0 +1,223 @@
+/* AMPLE REGULAR */
+@font-face {
+    font-family: 'ample';
+    src: url('soneri_type_-_ample-regular-webfont.eot');
+    src: url('soneri_type_-_ample-regular-webfont.eot?#iefix') format('embedded-opentype'),
+        url('soneri_type_-_ample-regular-webfont.woff2') format('woff2'),
+        url('soneri_type_-_ample-regular-webfont.woff') format('woff'),
+        url('soneri_type_-_ample-regular-webfont.ttf') format('truetype'),
+        url('soneri_type_-_ample-regular-webfont.svg#ample') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* AMPLE THIN */
+@font-face {
+    font-family: 'ample';
+    src: url('soneri_type_-_ample-thin-webfont.eot');
+    src: url('soneri_type_-_ample-thin-webfont.eot?#iefix') format('embedded-opentype'),
+        url('soneri_type_-_ample-thin-webfont.woff2') format('woff2'),
+        url('soneri_type_-_ample-thin-webfont.woff') format('woff'),
+        url('soneri_type_-_ample-thin-webfont.ttf') format('truetype'),
+        url('soneri_type_-_ample-thin-webfont.svg#ample') format('svg');
+    font-weight: 100;
+    font-style: normal;
+}
+
+/* AMPLE BOLD */
+@font-face {
+    font-family: 'ample';
+    src: url('soneri_type_-_ample-bold-webfont.eot');
+    src: url('soneri_type_-_ample-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('soneri_type_-_ample-bold-webfont.woff2') format('woff2'),
+        url('soneri_type_-_ample-bold-webfont.woff') format('woff'),
+        url('soneri_type_-_ample-bold-webfont.ttf') format('truetype'),
+        url('soneri_type_-_ample-bold-webfont.svg#ample') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+
+
+/* ------------- */
+/* LIBERTAD LIGHT */
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-lightitalic-webfont.eot');
+    src: url('tipotype_-_libertad-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-lightitalic-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-lightitalic-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-lightitalic-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-lightitalic-webfont.svg#libertad') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+
+/* LIBERTAD BOOK */
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-book-webfont.eot');
+    src: url('tipotype_-_libertad-book-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-book-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-book-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-book-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-book-webfont.svg#libertad') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-bookitalic-webfont.eot');
+    src: url('tipotype_-_libertad-bookitalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-bookitalic-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-bookitalic-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-bookitalic-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-bookitalic-webfont.svg#libertad') format('svg');
+    font-weight: 300;
+    font-style: italic;
+}
+
+
+/* LIBERTAD REGULAR */
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-webfont.eot');
+    src: url('tipotype_-_libertad-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-webfont.svg#libertad') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+/* LIBERTAD MEDIUM */
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-medium-webfont.eot');
+    src: url('tipotype_-_libertad-medium-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-medium-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-medium-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-medium-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-medium-webfont.svg#libertad') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-mediumitalic-webfont.eot');
+    src: url('tipotype_-_libertad-mediumitalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-mediumitalic-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-mediumitalic-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-mediumitalic-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-mediumitalic-webfont.svg#libertad') format('svg');
+    font-weight: 500;
+    font-style: italic;
+}
+
+
+/* LIBERTAD BOLD */
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-bold-webfont.eot');
+    src: url('tipotype_-_libertad-bold-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-bold-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-bold-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-bold-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-bold-webfont.svg#libertad') format('svg');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'libertad';
+    src: url('tipotype_-_libertad-bolditalic-webfont.eot');
+    src: url('tipotype_-_libertad-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+        url('tipotype_-_libertad-bolditalic-webfont.woff2') format('woff2'),
+        url('tipotype_-_libertad-bolditalic-webfont.woff') format('woff'),
+        url('tipotype_-_libertad-bolditalic-webfont.ttf') format('truetype'),
+        url('tipotype_-_libertad-bolditalic-webfont.svg#libertad') format('svg');
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+
+/* FIX PARA ALGUNS NAVEGADORES */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    @font-face {
+        font-family: 'ample';
+        src: url('soneri_type_-_ample-regular-webfont.svg#ample') format('svg');
+        font-weight: 400;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'ample';
+        src: url('soneri_type_-_ample-thin-webfont.svg#ample') format('svg');
+        font-weight: 100;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'ample';
+        src: url('soneri_type_-_ample-bold-webfont.svg#ample') format('svg');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-lightitalic-webfont.svg#libertad') format('svg');
+        font-weight: 200;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-book-webfont.svg#libertad') format('svg');
+        font-weight: 300;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-bookitalic-webfont.svg#libertad') format('svg');
+        font-weight: 300;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-webfont.svg#libertad') format('svg');
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-medium-webfont.svg#libertad') format('svg');
+        font-weight: 500;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-mediumitalic-webfont.svg#libertad') format('svg');
+        font-weight: 500;
+        font-style: italic;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-bold-webfont.svg#libertad') format('svg');
+        font-weight: 600;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'libertad';
+        src: url('tipotype_-_libertad-bolditalic-webfont.svg#libertad') format('svg');
+        font-weight: 600;
+        font-style: italic;
+    }
+}

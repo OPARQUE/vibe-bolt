@@ -1,0 +1,14 @@
+<p>Alguém preencheu um formulário em {{ paths.currenturl }} 
+para enviar os seguintes dados:</p>
+
+<hr>
+
+{% for label, value in form %}
+<p>{{ label }}: {{ value }}</p>
+
+{% endfor %}
+
+<br>
+<br>
+Este e-mail foi enviado através de um formulário do namesmavibe.com.br<br>
+Desenvolvido por OPARQUE

@@ -1,0 +1,8 @@
+<div class="row menu-horizontal-main">
+    {% set qtmenu = 12 / menu|length %}
+    {% for item in menu %}
+        <div class="col-md-{{ qtmenu|round }} col-sm-6 col-xs-12">
+            <a href="{{ item.link }}" {% if item.tipo == 'icone' %} style="font-weight:200;font-size: 1.6em" {% endif %} class="text-uppercase {% if item.class is defined %}{{ item.class }}{% endif %} {% if item|current %} ativo{% endif %}">{{item.label}}</a>
+        </div>
+    {% endfor %}
+</div>

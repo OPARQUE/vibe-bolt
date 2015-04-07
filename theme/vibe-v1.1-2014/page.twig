@@ -1,0 +1,40 @@
+{% include 'partials/_header.twig' %}
+{% setcontent secao = 'secoes' where { id: record.relation.secoes.0 } limit 1 %}
+<div class="conteudo-central">
+    <div class="container">
+        <div class="row">
+            {{ menu('main', 'partials/_main_menu.twig') }}
+            <div class="col-md-7 col-sm-8 col-xs-12">
+                <div class="row">
+                    <div class="col-md-12 capa-pagina" style="background-image: url({% if secao.capa == '' %}{{ paths.rooturl ~ 'files/2014-12/capa_na_tv.jpg' }}{% else %} {{secao.capa|image()}} {% endif %});">
+                        <h2 class="text-bg">
+                            <span>{{secao.titulo}}</span>
+                        </h2>
+                    </div>
+                </div>
+                <div class="row pagina">
+                    <div class="col-md-12">
+                        {% set menusecao = "" ~ secao.menu %}
+                        {{ menu(menusecao, 'partials/_category_menu.twig') }}
+                        <div class="row">
+                            <!-- Start record -->
+                            <div class="col-xs-12 item-list-page">
+                                <h2 class="text-uppercase">{{record.titulo}}</h2>
+                                {% if record.image != '' %}
+                                    <img src="{{ thumbnail(record.image, 640, 300) }}" class="img-responsive" />
+                                {% endif %}
+                                <p>
+                                    {{record.body}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 hidden-xs hidden-sm">
+                {% include 'partials/_sidebar_right.twig' %}
+            </div>
+        </div>
+    </div>
+</div><!--/.conteudo-central -->
+{% include 'partials/_footer.twig' %}
